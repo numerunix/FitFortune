@@ -1,0 +1,5 @@
+<svg>
+   <image href="background.png" />
+        <text id="avviso" x="50%" y="100%-25" class="avvisoText"></text>
+</svg>
+
