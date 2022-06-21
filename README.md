@@ -1,7 +1,7 @@
 # FitFortune
 
 Questa app vuole essere un concorrente grafico dell'app fortune di GNU/Linux per fitbit.
-Si basa su un sito web non gestito da me, nello specifico https://helloacm.com/api/fortune/ , e dovrebbe refrsahre il frame ogni tot secondi, in modo da consentire una lettura immediata del cookie della fortuna.
+Si basa su un sito web non gestito da me, nello specifico https://helloacm.com/api/fortune/ , e dovrebbe refreshare il frame ogni tot secondi, in modo da consentire una lettura immediata del cookie della fortuna.
 
 Attualmente mostra il cookie come output su console, solo che siccome il nuovo firmware è poco più di una alfa, non funziona, anche se la logica in apparenza sembra corretta.
 
