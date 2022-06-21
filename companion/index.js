@@ -1,6 +1,8 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
 
+let secondi;
+
 // Message socket opens
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
@@ -48,9 +50,17 @@ fetch('http://helloacm.com/api/fortune/')
 })
 };
 
+function doSomething() {
+  console.log("Hello World");
+}
+
+
 // Send data to device using Messaging API
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+    if (data.key==="seconds") 
+      secondi=evt.data.newValue*1000;
+    setTimeout(doSomething, secondi);
     messaging.peerSocket.send(data);
   }
 };
