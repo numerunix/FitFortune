@@ -7,6 +7,11 @@ Attualmente il frame viene refreshato indistintamente, perché l'app per acceder
 
 Il cookie dovrebbe essere comunque leggibile per alcuni secondi al momento dell'aggiornamento del firmware del fitbit ionic.
 
+# Installazione
+Per l'installazione loggatevi su http://studio.fitbit.com dal pc, collegate sia l'orologio che il cellullare google alla stessa rete wifi in cui c'è il pc, sezionate il cellulare e l'orologio nella barra in alto, create un nuovo progetto vuoto ed importate tutti i files presenti, infine cliccate su run e se l'orologio non è troppo pieno di app funziona. Per mettere le impostazioni, dovete aprire le impostazioni del fitibit sul cellulare, tappare su menù sviluppatore, tappare su FitFortune in app trasferite in locale, tappare su impostazioni, ed impostare i dati e, per sicurezza, sincronizzare il Fitbit.
+
+Una versione non testata dell'app è al momento in revisione sulla FitBit App Gallery
+
 # Bibliografia
 https://community.fitbit.com/t5/SDK-Development/Messaging-from-device-to-companion-every-0-5-seconds-only-works-the-first/td-p/3101033
 
