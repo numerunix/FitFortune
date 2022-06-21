@@ -1,5 +1,8 @@
 <svg>
    <image href="background.png" />
-        <text id="avviso" x="50%" y="100%-25" class="avvisoText"></text>
+        <text id="cookie" x="0" y="0" class="cookieText">Quello che ad un autore piace scrivere di piu' e' la sua firma sul retro
+degli assegni.
+		-- Brendan Francis
+</text>
 </svg>
 
