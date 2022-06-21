@@ -1,0 +1,3 @@
+msgid "Nuovo biscotto"
+msgstr "Nouveau cookie"
+
