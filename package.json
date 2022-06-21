@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~4.3.0"
+  },
+  "fitbit": {
+    "appUUID": "974976e3-44ef-44d2-b377-419a9e677a9f",
+    "appType": "app",
+    "appDisplayName": "FitFortune",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#03a9f4",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "FitFortune"
+      },
+      "it-IT": {
+        "name": "FitFortune"
+      }
+    },
+    "defaultLanguage": "it-IT"
+  }
+}
