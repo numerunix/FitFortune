@@ -7,5 +7,9 @@ Attualmente mostra il cookie come output su console, solo che siccome il nuovo f
 
 # Bibliografia
 https://community.fitbit.com/t5/SDK-Development/Messaging-from-device-to-companion-every-0-5-seconds-only-works-the-first/td-p/3101033
+
 https://dev.fitbit.com/build/guides/migration/
+
 https://dev.fitbit.com/build/reference/companion-api/fetch/#typealias-requestinfo
+
+https://helloacm.com/fortune/
