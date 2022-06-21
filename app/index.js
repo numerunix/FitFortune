@@ -3,17 +3,17 @@ import { gettext } from "i18n";
 import  * as messaging from "messaging";
 import * as document from "document";
 
-let data = document.getElementById("data");
-let nome = document.getElementById("nome");
-let avviso = document.getElementById("avviso");
+let cookie = document.getElementById("avviso");
 
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
-};
-
-
+    if (evt.data.key === "seconds" && evt.data.newValue) {
+    let cookie = JSON.parse(evt.data.newValue);
+      cookie.text=cookie;
+  }
+ }
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
