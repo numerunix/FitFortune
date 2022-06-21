@@ -10,8 +10,9 @@ messaging.peerSocket.onmessage = evt => {
     if (evt.data.key === "seconds" && evt.data.newValue) {
       secondi=evt.data.newValue;
   }
-  cookie.text = JSON.parse(evt.data.newValue);
-  sleep(secondi*1000);
+  if (evt.data.key !== "seconds")
+    cookie.text = JSON.stringify(evt);
+//  sleep(secondi*1000);
  }
 
 // Message socket opens
