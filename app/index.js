@@ -1,18 +1,17 @@
 import document from "document";
-import { gettext } from "i18n";
 import  * as messaging from "messaging";
-import * as document from "document";
 
-let cookie = document.getElementById("avviso");
-
+let cookie = document.getElementById("cookie");
+let secondi;
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
     if (evt.data.key === "seconds" && evt.data.newValue) {
-    let cookie = JSON.parse(evt.data.newValue);
-      cookie.text=cookie;
+      secondi=evt.data.newValue;
   }
+  cookie.text = JSON.parse(evt.data.newValue);
+  sleep(secondi*1000);
  }
 
 // Message socket opens
