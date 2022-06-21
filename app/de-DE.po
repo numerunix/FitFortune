@@ -1,0 +1,2 @@
+msgid "Nuovo biscotto"
+msgstr "neues Plätzchen"
