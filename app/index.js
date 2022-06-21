@@ -8,11 +8,9 @@ let secondi;
 messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
     if (evt.data.key === "seconds" && evt.data.newValue) {
-      secondi=evt.data.newValue;
+      secondi=evt.data.newValue*1000;
   }
-  if (evt.data.key !== "seconds")
-    cookie.text = JSON.stringify(evt);
-//  sleep(secondi*1000);
+  cookie.text = JSON.stringify(evt);
  }
 
 // Message socket opens
