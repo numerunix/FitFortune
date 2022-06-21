@@ -1,2 +1,0 @@
-msgid "Nuovo biscotto"
-msgstr "New cookie"
