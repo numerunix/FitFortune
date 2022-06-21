@@ -4,13 +4,26 @@ import { settingsStorage } from "settings";
 // Message socket opens
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
-  getNewCookie();
+  restoreSettings();
 };
 
 // Message socket closes
 messaging.peerSocket.onclose = () => {
   console.log("Companion Socket Closed");
 };
+
+function restoreSettings() {
+  for (let index = 0; index < settingsStorage.length; index++) {
+    let key = settingsStorage.key(index);
+    if (key) {
+      let data = {
+        key: key,
+        newValue: settingsStorage.getItem(key)
+      };
+      sendVal(data);
+    }
+  }
+}
 
 // A user changes settings
 settingsStorage.onchange = evt => {
@@ -19,16 +32,19 @@ settingsStorage.onchange = evt => {
     newValue: evt.newValue
   };
   sendVal(data);
+  getNewCookie();
 };
 
 function getNewCookie() {
-fetch('https://helloacm.com/api/fortune/') 
+fetch('http://helloacm.com/api/fortune/') 
 .then(function(response) {
-  console.log(response.text());
+  console.log(JSON.stringify(response));
 }).then(function(data) {
-  console.log(data.text()); 
+    let cookieData = JSON.stringify(data)
+    console.log(cookieData);
+    sendVal(cookieData);
 }).catch(function(err) {
-  console.log(err.text);
+  console.log(JSON.stringify(err));
 })
 };
 
