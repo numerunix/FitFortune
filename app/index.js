@@ -15,7 +15,7 @@ messaging.peerSocket.onmessage = evt => {
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
-;
+  console.log("App Socket Open");;
 };
                        
 // Message socket closes
@@ -24,6 +24,5 @@ messaging.peerSocket.onclose = () => {
 };
 
 console.log("Copyright \u00A92022 Giulio Sorrentino<gsorre84@gmail.com>");
-  console.log("This program is based on MicroDateFrom");
-  console.log("This program is distribuited under GPL. No Warranty is provided.");
-  console.log("App Socket Open");
+console.log("This program is based on MicroDateFrom");
+console.log("This program is distribuited under GPL. No Warranty is provided.");
