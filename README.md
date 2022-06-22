@@ -17,6 +17,10 @@ Se volete vedere come è impaginata questa app ma non per farla funzionare, logg
 # Dedica
 Dedico il progetto FitFortune a Francesca Milano.
 
+
+<img width="809" alt="Immagine 2022-06-22 183138" src="https://user-images.githubusercontent.com/49764967/175087682-0f23bb87-02c4-4fb1-abce-bedb3a3e1f39.png">
+
+
 # Bibliografia
 https://community.fitbit.com/t5/SDK-Development/Messaging-from-device-to-companion-every-0-5-seconds-only-works-the-first/td-p/3101033
 
