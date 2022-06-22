@@ -15,18 +15,27 @@ messaging.peerSocket.onclose = () => {
 };
 
 function restoreSettings() {
-  for (let index = 0; index < settingsStorage.length; index++) {
+  let index = 0
+  let data = null;
+  for (index=0; index < settingsStorage.length; index++) {
     let key = settingsStorage.key(index);
     if (key) {
-      let data = {
+      data = {
         key: key,
         newValue: settingsStorage.getItem(key)
-      };
+      }
       sendVal(data);
-    }
+    } else if (index==0) {
+            settingsStorage.setItem('seconds', 5);
+            data = {
+              key: "seconds",
+            newValue: settingsStorage.getItem(key)
+            }
+            sendVal(data);
+    } else if (index==1)
+            settingsStorage.setItem('access_internet', true);
   }
 }
-
 // A user changes settings
 settingsStorage.onchange = evt => {
   let data = {
