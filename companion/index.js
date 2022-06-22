@@ -40,27 +40,21 @@ settingsStorage.onchange = evt => {
 function getNewCookie() {
 fetch('http://helloacm.com/api/fortune/') 
 .then(function(response) {
-  console.log(JSON.stringify(response));
+    sendVal(response.json());
 }).then(function(data) {
-    let cookieData = JSON.stringify(data)
-    console.log(cookieData);
-    sendVal(cookieData);
+    console.log(data)
 }).catch(function(err) {
-  console.log(JSON.stringify(err));
+  console.error(err);
 })
 };
-
-function doSomething() {
-  console.log("Hello World");
-}
 
 
 // Send data to device using Messaging API
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     if (data.key==="seconds") 
-      secondi=evt.data.newValue*1000;
-    setTimeout(doSomething, secondi);
+      secondi=data.newValue*1000;
+    setTimeout(getNewCookie, secondi);
     messaging.peerSocket.send(data);
   }
 };
