@@ -9,8 +9,9 @@ function mySettings(props) {
           type="text" 
         />
       <Toggle settingsKey="access_internet" label="Attiva la connesione internet" />
-      {<Text bold align="center">Creato da Giulio Sorrentino </Text>}
-      {<Text bold align="center">Debbugato dal team di fitbit </Text>}
+      {<Text bold align="center">Creato da Giulio Sorrentino</Text>}
+      {<Text bold align="center">Debbugato dal team di fitbit</Text>}
+      {<Text bold align="center">Dedicato a Francesca Milano</Text>}
     </Page>
   );
 }
