@@ -24,5 +24,6 @@ messaging.peerSocket.onclose = () => {
 };
 
 console.log("Copyright \u00A92022 Giulio Sorrentino<gsorre84@gmail.com>");
+console.log("This progam is dedicated to Francesca Milano");
 console.log("This program is based on MicroDateFrom");
 console.log("This program is distribuited under GPL. No Warranty is provided.");
