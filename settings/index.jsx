@@ -9,6 +9,7 @@ function mySettings(props) {
           type="text" 
         />
       <Toggle settingsKey="access_internet" label="Attiva la connesione internet" />
+      <Toggle settingsKey="run_background" label="Attiva il background" />
       <Button list label="Elimina impostazioni" onClick={() => props.settingsStorage.clear()} />
       {<Text bold align="center">Creato da Giulio Sorrentino</Text>}
       {<Text bold align="center">Debbugato dal team di fitbit</Text>}
