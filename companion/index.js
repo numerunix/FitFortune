@@ -8,6 +8,7 @@ messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();
   secondi=5000;
+  setInterval(me.getNewCookie, me.secondi);
 };
 
 // Message socket closes
