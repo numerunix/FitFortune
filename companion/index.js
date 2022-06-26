@@ -7,6 +7,7 @@ let secondi;
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();
+  secondi=5000;
 };
 
 // Message socket closes
