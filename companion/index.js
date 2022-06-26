@@ -34,10 +34,7 @@ function restoreSettings() {
             newValue: settingsStorage.getItem(key)
             }
             sendVal(data);
-    } else if (index==1)
-            settingsStorage.setItem('access_internet', true);
-     else if (index==2)
-            settingsStorage.setItem('run_background', true);
+    }
   }
 }
 // A user changes settings
