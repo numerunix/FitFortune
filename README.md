@@ -3,13 +3,11 @@
 Questa app vuole essere un concorrente grafico dell'app fortune di GNU/Linux per fitbit.
 Si basa su un sito web non gestito da me, nello specifico https://helloacm.com/api/fortune/ , e dovrebbe refreshare il frame ogni tot secondi, in modo da consentire una lettura immediata del cookie della fortuna.
 
-Attualmente il frame viene refreshato indistintamente, perché l'app per accedere ad internet non funziona, è il companion a venire refreshato ad ogni cambio di stato.
-
-Il cookie dovrebbe essere comunque leggibile per alcuni secondi al momento dell'aggiornamento del firmware del fitbit ionic.
+Attualmente il frame viene non viene refreshato, per limiti tecnici, ma mostra un cookie all'avvio. Per avere più cookie bisogna chiudere e riaprire l'app.
 
 # Installazione
 
-Il team di fitbit mi ha fatto capire che per funzionare servono i permessi per accedere ad internet, e quelli li possono avere solo le app siglate da fitbit che le richiedono, per cui andrebbe installata la versione dalla fitbit app gallery.
+Il team di fitbit mi ha fatto capire che per funzionare servono i permessi per accedere ad internet ed io ho capito che servono i permessi di background, e quelli li possono avere solo le app siglate da fitbit che le richiedono, per cui andrebbe installata la versione sullo store Fitbit.
 
 Dal momento che necessita di internet sempre attivo, è meglio usare l'app su un firmware dotato di microfequenze.
 
@@ -18,9 +16,6 @@ Se volete vedere come è impaginata questa app ma non per farla funzionare, logg
 
 # Dedica
 Dedico il progetto FitFortune a Francesca Milano.
-
-
-<img width="809" alt="Immagine 2022-06-22 183138" src="https://user-images.githubusercontent.com/49764967/175087682-0f23bb87-02c4-4fb1-abce-bedb3a3e1f39.png">
 
 # Credits
 
