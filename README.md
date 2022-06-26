@@ -29,7 +29,7 @@ https://dev.fitbit.com/build/guides/migration/
 https://dev.fitbit.com/build/reference/companion-api/fetch/#typealias-requestinfo
 
 https://github.com/Fitbit/sdk-oauth/blob/b0880137397649f39ebebb370b05b7e5e565cc45/companion/index.js
-
-https://community.fitbit.com/t5/SDK-Development/Reliable-way-of-invoking-a-function-every-second/td-p/2608715
+[
+https://community.fitbit.com/t5/SDK-Development/Reliable-way-of-invoking-a-function-every-second/td-p/2608715](https://dev.fitbit.com/build/guides/companion/)
 
 https://helloacm.com/fortune/
