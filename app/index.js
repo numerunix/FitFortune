@@ -1,6 +1,5 @@
 import document from "document";
 import  * as messaging from "messaging";
-import {me} from "companion";
 
 let cookie = document.getElementById("cookie");
 let secondi;
@@ -18,7 +17,6 @@ messaging.peerSocket.onopen = () => {
   console.log("This program is based on MicroDateFrom");
   console.log("This program is distribuited under GPL. No Warranty is provided.");
   console.log("App Socket Open");
-  setTimeout(me.getNewCookie, me.secondi);
 };
                        
 // Message socket closes
