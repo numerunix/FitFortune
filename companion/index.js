@@ -1,14 +1,13 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
-
-let secondi;
+import { me as companion } from "companion"
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();
-  secondi=5000;
-  setInterval(me.getNewCookie, me.secondi);
+  companion.wakeInterval=6000;
+  companion.addEventListener("wakeInterval", getNewCookie);
 };
 
 // Message socket closes
@@ -37,6 +36,7 @@ function restoreSettings() {
     }
   }
 }
+
 // A user changes settings
 settingsStorage.onchange = evt => {
   let data = {
@@ -44,13 +44,12 @@ settingsStorage.onchange = evt => {
     newValue: evt.newValue
   };
   sendVal(data);
-  getNewCookie();
 };
 
 function getNewCookie() {
 fetch('http://helloacm.com/api/fortune/') 
 .then(function(response) {
-    sendVal(response.json());
+    sendVal(response);
 }).then(function(data) {
     console.log(data)
 }).catch(function(err) {
@@ -63,8 +62,7 @@ fetch('http://helloacm.com/api/fortune/')
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     if (data.key==="seconds") 
-      secondi=data.newValue*1000;
-    setTimeout(getNewCookie, secondi);
+      companion.wakeInterval=data.newValue*1000;
     messaging.peerSocket.send(data);
   }
 };
