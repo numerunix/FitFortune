@@ -6,7 +6,7 @@ import { me as companion } from "companion";
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();
-  companion.wakeInterval=6000;
+  companion.wakeInterval=360000;
   companion.addEventListener("wakeInterval", getNewCookie);
 };
 
