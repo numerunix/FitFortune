@@ -1,6 +1,6 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
-import { me as companion } from "companion"
+import { me as companion } from "companion";
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
