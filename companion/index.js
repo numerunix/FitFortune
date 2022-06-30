@@ -3,7 +3,7 @@ import { settingsStorage } from "settings";
 import { me as companion } from "companion";
 
 // Message socket opens
-let indirizzo='http://helloacm.com/api/fortune/';
+var indirizzo='http://helloacm.com/api/fortune/';
 messaging.peerSocket.onopen = () => {
   console.log('Companion Socket Open');
   restoreSettings();
