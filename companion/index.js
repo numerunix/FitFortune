@@ -3,10 +3,12 @@ import { settingsStorage } from "settings";
 import { me as companion } from "companion";
 
 // Message socket opens
+let indirizzo='http://helloacm.com/api/fortune/';
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();
   companion.wakeInterval=360000;
+  indirizzo=""
   companion.addEventListener("wakeInterval", getNewCookie);
 };
 
@@ -25,15 +27,13 @@ function restoreSettings() {
         key: key,
         newValue: settingsStorage.getItem(key)
       }
+      if (key=="seconds")
+        companion.wakeInterval=data.newValue;
+      else if (key=="indirizzo")
+        indirizzo=data.newValue;
       sendVal(data);
-    } else if (index==0) {
-            settingsStorage.setItem('seconds', 5);
-            data = {
-              key: "seconds",
-            newValue: settingsStorage.getItem(key)
-            }
-            sendVal(data);
     }
+    
   }
 }
 
@@ -47,7 +47,7 @@ settingsStorage.onchange = evt => {
 };
 
 function getNewCookie() {
-fetch('http://helloacm.com/api/fortune/') 
+fetch(indirizzo) 
 .then(function(response) {
     sendVal(response);
 }).then(function(data) {
@@ -62,7 +62,7 @@ fetch('http://helloacm.com/api/fortune/')
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     if (data.key==="seconds") 
-      companion.wakeInterval=data.newValue*1000;
+      companion.wakeInterval=data.newValue*60000;
     messaging.peerSocket.send(data);
   }
 };
