@@ -5,16 +5,16 @@ import { me as companion } from "companion";
 // Message socket opens
 let indirizzo='http://helloacm.com/api/fortune/';
 messaging.peerSocket.onopen = () => {
-  console.log("Companion Socket Open");
+  console.log('Companion Socket Open');
   restoreSettings();
   companion.wakeInterval=360000;
-  indirizzo=""
-  companion.addEventListener("wakeInterval", getNewCookie);
+  indirizzo='';
+  companion.addEventListener('wakeInterval', getNewCookie);
 };
 
 // Message socket closes
 messaging.peerSocket.onclose = () => {
-  console.log("Companion Socket Closed");
+  console.log('Companion Socket Closed');
 };
 
 function restoreSettings() {
@@ -27,9 +27,9 @@ function restoreSettings() {
         key: key,
         newValue: settingsStorage.getItem(key)
       }
-      if (key=="seconds")
+      if (key=='seconds')
         companion.wakeInterval=data.newValue;
-      else if (key=="indirizzo")
+      else if (key=='indirizzo')
         indirizzo=data.newValue;
       sendVal(data);
     }
@@ -61,7 +61,7 @@ fetch(indirizzo)
 // Send data to device using Messaging API
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-    if (data.key==="seconds") 
+    if (data.key==='seconds') 
       companion.wakeInterval=data.newValue*60000;
     messaging.peerSocket.send(data);
   }
