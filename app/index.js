@@ -1,8 +1,8 @@
 import document from "document";
 import  * as messaging from "messaging";
 
-let cookie = document.getElementById('cookie');
-let secondi;
+var cookie = document.getElementById('cookie');
+var secondi;
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
