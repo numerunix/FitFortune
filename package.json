@@ -1,4 +1,7 @@
 {
+  "name": "fitfortune
+  "version": "0.8.3,
+  "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@fitbit/sdk": "~4.3.0"
   },
@@ -9,7 +12,8 @@
     "iconFile": "resources/icon.png",
     "wipeColor": "#03a9f4",
     "requestedPermissions": [
-      "access_internet"
+      "access_internet",
+      "access_background"
     ],
     "buildTargets": [
       "higgs"
