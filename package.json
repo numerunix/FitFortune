@@ -1,6 +1,6 @@
 {
-  "name": "fitfortune
-  "version": "0.8.3,
+  "name": "fitfortune",
+  "version": "0.8.3",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@fitbit/sdk": "~4.3.0"
