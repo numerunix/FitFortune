@@ -13,7 +13,7 @@
     "wipeColor": "#03a9f4",
     "requestedPermissions": [
       "access_internet",
-      "access_background"
+      "run_background"
     ],
     "buildTargets": [
       "higgs"
