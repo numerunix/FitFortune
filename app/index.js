@@ -7,7 +7,6 @@ var secondi;
 // Message is received
 messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
-  }
 }
 
 // Message socket opens
