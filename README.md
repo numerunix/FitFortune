@@ -16,7 +16,7 @@ Se volete vedere come è impaginata questa app ma non per farla funzionare, logg
 
 
 # Dedica
-Dedico il progetto FitFortune alla barista del Max Bar di Rivisondoli con cui c'era alchimia (verosimilmente Giovanna Smorto).
+Dedico il progetto FitFortune a Francesca Milano.
 
 # Credits
 
