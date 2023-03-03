@@ -1,6 +1,11 @@
 import * as document from "document";
 import * as messaging from "messaging";
 var cookie = document.getElementById('cookie');
+const myButton = document.getElementById("myButton");
+
+myButton.addEventListener("click", (evt) => {
+  fetchCookie();
+})
 
 function fetchCookie() {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
