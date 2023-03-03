@@ -3,12 +3,11 @@ import { settingsStorage } from "settings";
 import { me as companion } from "companion";
 
 // Message socket opens
-var indirizzo='http://helloacm.com/api/fortune/';
+var indirizzo='https://api.justyy.workers.dev/api/fortune';
 messaging.peerSocket.onopen = () => {
   console.log('Companion Socket Open');
   restoreSettings();
   companion.wakeInterval=360000;
-  indirizzo='';
   companion.addEventListener('wakeInterval', getNewCookie);
 };
 
@@ -29,8 +28,6 @@ function restoreSettings() {
       }
       if (key=='seconds')
         companion.wakeInterval=data.newValue;
-      else if (key=='indirizzo')
-        indirizzo=data.newValue;
       sendVal(data);
     }
     
@@ -39,15 +36,12 @@ function restoreSettings() {
 
 // A user changes settings
 settingsStorage.onchange = evt => {
-  let data = {
-    key: evt.key,
-    newValue: evt.newValue
-  };
+  let data = evt.newValue
   sendVal(data);
 };
 
-function getNewCookie() {
-fetch(indirizzo) 
+async function getNewCookie() {
+  await fetch(indirizzo) 
 .then(function(response) {
     sendVal(response);
 }).then(function(data) {
@@ -62,7 +56,7 @@ fetch(indirizzo)
 function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     if (data.key==='seconds') 
-      companion.wakeInterval=data.newValue*60000;
+      companion.wakeInterval=data*60000;
     messaging.peerSocket.send(data);
   }
 };
