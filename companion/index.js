@@ -1,62 +1,44 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
-import { me as companion } from "companion";
 
-// Message socket opens
-var indirizzo='https://api.justyy.workers.dev/api/fortune';
-messaging.peerSocket.onopen = () => {
-  console.log('Companion Socket Open');
-  restoreSettings();
-  companion.wakeInterval=360000;
-  companion.addEventListener('wakeInterval', getNewCookie);
-};
+settingsStorage.addEventListener("change", (evt) => {
+  // Which setting changed
+  console.log(`key: ${evt.key}`)
 
-// Message socket closes
-messaging.peerSocket.onclose = () => {
-  console.log('Companion Socket Closed');
-};
+  // What was the old value
+  console.log(`old value: ${evt.oldValue}`)
 
-function restoreSettings() {
-  let index = 0
-  let data = null;
-  for (index=0; index < settingsStorage.length; index++) {
-    let key = settingsStorage.key(index);
-    if (key) {
-      data = {
-        key: key,
-        newValue: settingsStorage.getItem(key)
-      }
-      if (key=='seconds')
-        companion.wakeInterval=data.newValue;
-      sendVal(data);
-    }
-    
+  // What is the new value
+  console.log(`new value: ${evt.newValue}`)
+});
+
+function queryCookie() {
+  fetch("https://api.justyy.workers.dev/api/fortune")
+  .then(function (response) {
+      response.json()
+      .then(function(data) {
+        returnCookie(data);
+      });
+  })
+  .catch(function (err) {
+    console.error(`Error fetching weather: ${err}`);
+  });
+}
+
+function returnCookie(data) {
+  if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+    messaging.peerSocket.send(data);
+  } else {
+    console.error("Error: Connection is not open");
   }
 }
 
-// A user changes settings
-settingsStorage.onchange = evt => {
-  let data = evt.newValue
-  sendVal(data);
-};
-
-async function getNewCookie() {
-  await fetch(indirizzo) 
-.then(function(response) {
-    sendVal(response);
-}).then(function(data) {
-    console.log(data)
-}).catch(function(err) {
-  console.error(err);
-})
-};
-
-
-// Send data to device using Messaging API
-function sendVal(data) {
-  if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-    if (data.key==='seconds') 
-      companion.wakeInterval=data*60000;
-    messaging.peerSocket.send(data);
+messaging.peerSocket.addEventListener("message", (evt) => {
+  if (evt.data && evt.data.command === "cookie") {
+    queryCookie();
   }
-};
+});
+
+messaging.peerSocket.addEventListener("error", (err) => {
+  console.error(`Connection error: ${err.code} - ${err.message}`);
+});

@@ -1,5 +1,5 @@
 <svg>
    <image href="background.png" />
-   <textarea id="cookie" x="0" y="25" class="cookieText" text-length="64"></textarea>
+   <textarea id="cookie" x="0" y="25" class="cookieText" text-length="128"></textarea>
 </svg>
 
