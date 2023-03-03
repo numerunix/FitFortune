@@ -1,5 +1,7 @@
 <svg>
    <image href="background.png" />
-   <textarea id="cookie" x="0" y="25" class="cookieText" text-length="128"></textarea>
+   <textarea id="cookie" x="25" y="25" width="290" class="cookieText" text-length="128"></textarea>
+   <use id="myButton" href="#text-button" class="text-button bottom application-fill" />
+
 </svg>
 
