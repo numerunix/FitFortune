@@ -1,0 +1,36 @@
+{
+  "name": "fitfortune",
+  "version": "0.8.3",
+  "license": "SEE LICENSE IN LICENSE",
+  "fitbit": {
+    "appUUID": "d9398975-4f80-455d-863e-ac5b08408e00",
+    "appType": "app",
+    "appDisplayName": "FitFortune",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#03a9f4",
+    "requestedPermissions": [
+      "access_internet",
+      "run_background"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "FitFortune"
+      },
+      "it-IT": {
+        "name": "FitFortune"
+      }
+    },
+    "defaultLanguage": "it-IT"
+  },
+  "dependencies": {
+    "@fitbit/sdk": "^6.1.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  }
+}
