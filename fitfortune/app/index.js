@@ -17,6 +17,7 @@ function fetchCookie() {
 }
 
 function processData(data) {
+    data = data.replace('\t', '   ');
     cookie.text=`${data}`;
 }
 

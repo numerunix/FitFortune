@@ -1,9 +1,9 @@
 {
   "name": "fitfortune",
-  "version": "0.8.3",
+  "version": "1.0.2",
   "license": "SEE LICENSE IN LICENSE",
   "fitbit": {
-    "appUUID": "d9398975-4f80-455d-863e-ac5b08408e00",
+    "appUUID": "8888888888888888888",
     "appType": "app",
     "appDisplayName": "FitFortune",
     "iconFile": "resources/icon.png",

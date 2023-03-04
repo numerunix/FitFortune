@@ -26,10 +26,12 @@ function queryCookie() {
 }
 
 function returnCookie(data) {
-  if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-    messaging.peerSocket.send(data);
-  } else {
-    console.error("Error: Connection is not open");
+    if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+        data = data.split("\t");
+        data = data.join("    ");
+        messaging.peerSocket.send(data);
+    } else {
+        console.error("Error: Connection is not open");
   }
 }
 
