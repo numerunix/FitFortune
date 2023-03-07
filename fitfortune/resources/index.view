@@ -1,7 +1,15 @@
 <svg>
+  <defs>
+    <link rel="stylesheet" href="styles.css" />
+  </defs>
    <image href="background.png" />
-   <textarea id="cookie" x="25" y="25" width="290" class="cookieText" text-length="128"></textarea>
-   <use id="myButton" href="#text-button" class="text-button bottom application-fill" />
-
+   <use href="#scrollview">
+    <use href="#scrollview-header" display="flexible-height">
+      <use id="myButton" href="#text-button" class="text-button" height="70" />
+   </use>
+    <use href="#scrollview-item" display="flexible-height">
+       <textarea id="cookie" x="0" y="50" height="1400" class="cookieText"></textarea>
+    </use>
+  </use>
 </svg>
 

@@ -8,10 +8,16 @@
   fill: white;
 }
 
-#cookieText {
+.cookieText {
+  text-length: 14400;
   fill: white;
+  text-anchor: start;
+  rows: 50;
+  display-align: center;
 }
 
 #myButton #text {
   text-buffer: "New Cookie";
+  fill: white;
 }
+

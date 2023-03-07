@@ -21,17 +21,18 @@ function queryCookie() {
       });
   })
   .catch(function (err) {
-    console.error(`Error fetching weather: ${err}`);
+    console.error(`Error fetching cookie: ${err}`);
   });
 }
 
 function returnCookie(data) {
-    if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-        data = data.split("\t");
-        data = data.join("    ");
-        messaging.peerSocket.send(data);
-    } else {
-        console.error("Error: Connection is not open");
+  if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+    data=data.split('\t');
+    data=data.join('  ');
+    data+='\n\n\n';
+    messaging.peerSocket.send(data);
+  } else {
+    console.error("Error: Connection is not open");
   }
 }
 
