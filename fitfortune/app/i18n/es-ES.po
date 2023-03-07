@@ -1,0 +1,21 @@
+msgid "Hai incontrato"
+msgstr "Coniciste a"
+
+msgid "circa"
+msgstr "hace"
+
+msgid "giorni fa"
+msgstr "dias"
+
+msgid "E' il vostro anniversario"
+msgstr "Es tu aniversario"
+
+msgid "E' il vostro meseversario"
+msgstr "Es tu mes aniversario"
+
+msgid "Valore non valido"
+msgstr "valor inválido"
+
+msgid "giorni sono passati"
+msgstr "dias pasaron"
+

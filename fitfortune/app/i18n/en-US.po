@@ -1,0 +1,20 @@
+msgid "Hai incontrato"
+msgstr "You have meet"
+
+msgid "circa"
+msgstr "about"
+
+msgid "giorni fa"
+msgstr "days ago"
+
+msgid "E' il vostro anniversario"
+msgstr "It's your anniversary"
+
+msgid "E' il vostro meseversario"
+msgstr "It is your mesiversary"
+
+msgid "Valore non valido"
+msgstr "invalid rvalue"
+
+msgid "giorni sono passati"
+msgstr "days are passed"

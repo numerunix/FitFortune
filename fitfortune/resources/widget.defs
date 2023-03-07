@@ -5,6 +5,5 @@
         <!-- Additional Imports -->
     <link rel="import" href="/mnt/sysassets/widgets/baseview_widget.defs" />
     <link rel="import" href="/mnt/sysassets/widgets/scrollview_widget.defs" />
-    <link rel="import" href="/mnt/sysassets/widgets/text_button.defs" />
   </defs>
 </svg>

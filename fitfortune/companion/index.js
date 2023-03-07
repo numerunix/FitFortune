@@ -1,47 +1,80 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
+import { me as companion } from "companion";
 
+// Message socket opens
+messaging.peerSocket.addEventListener("open", (evt) => {
+  console.log('Companion Socket Open');
+  restoreSettings();
+});
+
+
+
+// Message socket closes
+messaging.peerSocket.onclose = () => {
+  console.log("Companion Socket Closed");
+};
+
+// A user changes settings
 settingsStorage.addEventListener("change", (evt) => {
-  // Which setting changed
-  console.log(`key: ${evt.key}`)
-
-  // What was the old value
-  console.log(`old value: ${evt.oldValue}`)
-
-  // What is the new value
-  console.log(`new value: ${evt.newValue}`)
+  let data = {
+    key: evt.key,
+    newValue: evt.newValue
+  };
+  sendVal(data);
 });
-
-function queryCookie() {
-  fetch("https://api.justyy.workers.dev/api/fortune")
-  .then(function (response) {
-      response.json()
-      .then(function(data) {
-        returnCookie(data);
-      });
-  })
-  .catch(function (err) {
-    console.error(`Error fetching cookie: ${err}`);
-  });
+// Restore any previously saved settings and send to the device
+function restoreSettings() {
+  for (let index = 0; index < settingsStorage.length; index++) {
+    let key = settingsStorage.key(index);
+    if (key) {
+      let data = {
+        key: key,
+        newValue: settingsStorage.getItem(key)
+      };
+      sendVal(data);
+    }
+  }
 }
 
-function returnCookie(data) {
+// Send data to device using Messaging API
+function sendVal(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
-    data=data.split('\t');
-    data=data.join('  ');
-    data+='\n\n\n';
     messaging.peerSocket.send(data);
-  } else {
-    console.error("Error: Connection is not open");
   }
 }
 
-messaging.peerSocket.addEventListener("message", (evt) => {
-  if (evt.data && evt.data.command === "cookie") {
-    queryCookie();
-  }
-});
 
-messaging.peerSocket.addEventListener("error", (err) => {
-  console.error(`Connection error: ${err.code} - ${err.message}`);
-});
+if (companion.launchReasons.settingsChanged) {
+      let data= {
+        key: "nome",
+        newValue: settingsStorage.getItem(Nome0)
+      };
+      sendval(data);
+      data=  {
+            key: "day",
+            newValue: settingsStorage.getItem(day0)
+      };
+      sendval(data);
+      data= {
+        key: "nome1",
+        newValue: settingsStorage.getItem(Nome1)
+      };
+      sendval(data);
+      data=  {
+            key: "day1",
+            newValue: settingsStorage.getItem(day1)
+      };
+      sendval(data);
+        data= {
+        key: "nome2",
+        newValue: settingsStorage.getItem(Nome2)
+      };
+      sendval(data);
+      data=  {
+            key: "day2",
+            newValue: settingsStorage.getItem(day2)
+      };
+      sendval(data);
+
+}
