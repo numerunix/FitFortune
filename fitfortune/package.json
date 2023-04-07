@@ -1,9 +1,12 @@
 {
+  "devDependencies": {
+    "@fitbit/sdk": "~6.1.0"
+  },
   "name": "fitfortune",
-  "version": "1.0.2",
+  "version": "0.8.3",
   "license": "SEE LICENSE IN LICENSE",
   "fitbit": {
-    "appUUID": "8888888888888888888",
+    "appUUID": "",
     "appType": "app",
     "appDisplayName": "FitFortune",
     "iconFile": "resources/icon.png",
@@ -13,8 +16,8 @@
       "run_background"
     ],
     "buildTargets": [
-      "atlas",
-      "vulcan"
+      "vulcan",
+      "atlas"
     ],
     "i18n": {
       "en-US": {
@@ -25,12 +28,5 @@
       }
     },
     "defaultLanguage": "it-IT"
-  },
-  "dependencies": {
-    "@fitbit/sdk": "^6.1.0",
-    "@fitbit/sdk-cli": "^1.7.3"
-  },
-  "scripts": {
-    "build": "fitbit-build"
   }
 }
